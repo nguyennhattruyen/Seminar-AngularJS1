@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html ng-app="myToDo">
+<head>
+	<meta charset="utf-8"/>
+	<title>Welcome to AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist\css\bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script type="text/javascript", src="todo.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div ng-controller="ToDoCtrl">
+			<ul class = jumbotron>
+				<h2> Todo List </h2>
+				<li ng-repeat="todo in todos"> 
+					<input type="checkbox" ng-model="todo.done"></input>
+					<span style="font-size: 20px" class="done-{{todo.done}}"> {{todo.text}} </span>
+				</li>
+			</ul>
+	
+			<input type="text" class="form-control" ng-model ="formTodoText" ng-model-instant> </input>
+		<div>
+			<button style="margin: 10px" class="btn btn-lg btn-primary" ng-click = "addTodo()"> Add </button>
+			<button class="btn btn-lg btn-success" ng-click="clearCompleted()">  Clear Completed </button>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
